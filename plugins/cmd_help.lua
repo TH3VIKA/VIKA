@@ -200,7 +200,6 @@ git clone https://github.com/TH3VIKA/VIKA.git ;cd VIKA;chmod +x ins;./ins
 ——
 📡 [Channel Source 🔗](https://t.me/VikaiQ) ┣ 
 ——
-™   مـطوريي هو  ┣]]..SUDO_USER
 ✓ 
     ]]
 end end
