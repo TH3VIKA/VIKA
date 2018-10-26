@@ -182,8 +182,10 @@ return [[
 
 ✶⊶⊷⊶⊷⊶⊷★⊶⊷⊶⊷⊶⊷✶
 
-git clone https://github.com/TH3VIKA/VIKA.git ;cd VIKA;chmod +x ins;./ins
 
+`git clone https://github.com/TH3VIKA/VIKA.git ;cd VIKA;chmod +x ins;./ins`
+    
+    
 ✶⊶⊷⊶⊷⊶⊷★⊶⊷⊶⊷⊶⊷✶
  
 📉┇مـن يخلصـ آلتنصـيب يطـلب مـنگ آلتوگن
@@ -192,13 +194,13 @@ git clone https://github.com/TH3VIKA/VIKA.git ;cd VIKA;chmod +x ins;./ins
 ⌨️┇تحطـهہ وتضـغطـ Enter 
 ✶⊶⊷⊶⊷⊶⊷★⊶⊷⊶⊷⊶⊷✶
 ↙️┇آلرن
-./VIKA/run
 
+`./VIKA/run`
 ✶⊶⊷⊶⊷⊶⊷★⊶⊷⊶⊷⊶⊷✶
 ✨┇ومـبروگ نصـبت سـورسـ فيـكاا ،
 ☑️┇تيجي آلجديد ع آلتوگن
 ——
-📡 [Channel Source 🔗](https://t.me/VikaiQ) ┣ 
+📡 [Channel Source 🔗](https://t.me/VikaiQ) 
 ——
 ✓ 
     ]]
