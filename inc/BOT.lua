@@ -20,7 +20,7 @@ local plugins = {}
 function create_config()
 local ip_login = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
 if not redis:get(ip_login..":TOKEN") then
-io.write('\n\27[1;33m￤ارسل توكن البوت الان ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
+io.write('\n\27[1;33m￤ارسل توكن البوت الذي تريد تشغيله    ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token:gsub(' ','')..'/getMe')
@@ -38,18 +38,18 @@ print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤ لم تقوم بادخال 
 create_config()
 end end
 if not redis:get(ip_login..":SUDO_USER") then
-io.write('\n\27[1;33m￤ادخل معرف المطور ↓  \n￤Enter your USERNAME SUDO : \27[0;39;49m')
+io.write('\n\27[1;33m￤ادخل معرف المطور الاساسي  ↓  \n￤Enter your USERNAME SUDO : \27[0;39;49m')
 SUDO_USER = io.read()
 if SUDO_USER ~= '' then
 if string.match(SUDO_USER, '@[%a%d_]') then
 local url , res = https.request('https://th3boss.ga/GetID/?User='..SUDO_USER)
 if res ~= 200 then
-print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطأ في الاتصال !')
+print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطأ في الاتصال حاو مجددا !')
 create_config()
 else
 local jjson = JSON.decode(url)
 if jjson.result then
-print('\n\27[1;36m￤تم حفظ معرف المطور واستخراج الايدي منه \n￤Success Save USERNAME IS_ID: \27[0;32m['..jjson.information.id..']\n\27[0;39;49m')
+print('\n\27[1;36m￤تم حفظ معرف المطور واستخراج الايدي منه الان ادخل للبوت وارسل /start \n￤Success Save USERNAME IS_ID: \27[0;32m['..jjson.information.id..']\n\27[0;39;49m')
 redis:set(ip_login..":SUDO_USER",true)
 redis:set(ip_login..":SUDO_USER",'@'..jjson.information.username)
 redis:set(ip_login..":SUDO_IDX",jjson.information.id)
@@ -158,22 +158,19 @@ os.execute("timedatectl set-timezone Asia/Baghdad")
 print('\27[0;33m>>'..[[
 
 
-
-
-
-
-
-
-
-
-
-
-
+_ _  _(_) |  _
+\ \ / / | |/ / _` |  
+ \ V /| |   < (_| |
+  \_/ |_|_|\_\,_|
+تم كتابه وبرمجة السورس 
+بوسطه النقيب اركان محمد  و عزوز الشمري 
+WRITING THE SOURCE BY : @Qeeev
+CH SOURCE : @VikaiQ
 
 
                                                   
-]]..'\27[0;31m'..[[¦ Dev : @T7TT3]]..'\27[m\27[0;32m\n\n\027[0;32m'   
-..'\27[0;31m'..[[¦ CH : @T3OIQ]]..'\27[m\27[0;32m\n\n\027[0;32m'   
+]]..'\27[0;31m'..[[¦ Dev : @Qeeev]]..'\27[m\27[0;32m\n\n\027[0;32m'   
+..'\27[0;31m'..[[¦ CH : @VikaiQ]]..'\27[m\27[0;32m\n\n\027[0;32m'   
 ..'¦ TOKEN_BOT: \27[1;34m'..info.TOKEN..'\027[0;32m\n'
 ..'¦ USER__BOT: \27[1;34m@'..TGO.result.username..'\027[0;32m\n'
 ..'¦ IS_ID_BOT: \27[1;34m'..TGO.result.id..'\027[0;32m\n'
@@ -193,7 +190,7 @@ bot_username = redis:get(boss..":username")
 SUDO_USER = check_markdown(_info.SUDO_USER) 
 SUDO_ID = _info.SUDO_ID 
 if redis:get(our_id..":WITTING:ON") then
-send_msg(redis:get(our_id..":WITTING:ON"),'📟*¦* تم اعادة تشغيل البوت ✓',nil,'md')
+send_msg(redis:get(our_id..":WITTING:ON"),'✳️*┣ * تم اعادة تشغيل البوت ——',nil,'md')
 redis:del(our_id..":WITTING:ON")
 end
 function match_plugins(msg)
