@@ -246,7 +246,7 @@ return "📭¦ حسننا , الان ارسل كلمه الرد \n-"
 end
 if r== "اسمي"  then return  "\n" ..check_name(msg.from.first_name).."\n" 
 elseif r== "معرفي" then return  "@["..(msg.from.username or " ---").."]\n" 
-elseif r== "ايديي" or r=="ايدي 🆔" then return "🆔*┫* دوس علي حبيبي وراح ينسخ      \n\n @["..msg.from.username.."] ~⪼ ( `"..msg.from.id.."` )"
+elseif r== "ايديي" or r=="ايدي 🆔" then return "🆔*~>>* دوس علي حبيبي وراح ينسخ      \n\n @["..msg.from.username.."] ~⪼ ( `"..msg.from.id.."` )"
 elseif r=="صورتي" then
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = msg.from.id,offset_ = 0,limit_ = 1}, function(arg, data)
 if data.photos_[0] then sendPhoto(msg.to.id,msg.id_,0,1,nil,data.photos_[0].sizes_[1].photo_.persistent_id_,"",dl_cb,nil)
