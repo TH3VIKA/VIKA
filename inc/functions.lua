@@ -115,16 +115,16 @@ function GP_Type(chat_id)
 local T_CHAT = 'pv'
 if tostring(chat_id):match('^-100') then T_CHAT = 'channel' elseif tostring(chat_id):match('-') then T_CHAT = 'chat' end return T_CHAT end
 function get_rank(msg)
-if we_sudo(msg) then var = 'مطور اساسي 🛠'
-elseif is_sudo(msg) then var = 'مطور البوت 🎫'
-elseif is_monsha(msg) then var = 'المنشىء 🏌🏻'
-elseif is_owner(msg) then var = 'مدير البوت 🎟'
-elseif is_mod(msg) then var = 'ادمن في البوت 🎖'
-elseif is_whitelist(msg.from.id,msg.to.id)  then var = 'عضو مميز ⭐️'
-else var = 'فقط عضو 🙍🏼‍♂️' end return var end
+if we_sudo(msg) then var = 'مـّطور اساسّي ☑️؛'
+elseif is_sudo(msg) then var = 'مـّطور البوّت 🔧؛'
+elseif is_monsha(msg) then var = 'المـّنشىء ⚖️؛'
+elseif is_owner(msg) then var = 'مـّدير البّوت 🔭؛'
+elseif is_mod(msg) then var = 'ادمـّن فّي البوت 🔨؛'
+elseif is_whitelist(msg.from.id,msg.to.id)  then var = 'عضو مـمـّيّز ⚜️؛'
+else var = 'عضو في المجموعه  🍃؛' end return var end
 function get_ttl(msgs)
 local var = '' 
-if msgs < 80 then var = 'غير متفاعل ✘' elseif msgs < 300 then var = 'ضعيف 🥀' elseif msgs < 900 then var = 'متوسط 🎋' elseif msgs < 5000 then var = 'متفاعل 💐' elseif msgs < 9000 then var = 'قوي جدا ⚡️' elseif msgs < 10000 then var = 'قمه التفاعل ✨' elseif msgs < 100000 then var = 'اقوى تفاعل 🔥' end return var end
+if msgs < 80 then var = '  😭 بعده جديد ؛' elseif msgs < 300 then var = '  🥀تفاعل كلش ضعيف ؛' elseif msgs < 900 then var = 'استمر  👍🏼' elseif msgs < 5000 then var = 'متفاعل 🍂' elseif msgs < 9000 then var = 'متفاعل نار⚡️' elseif msgs < 10000 then var = 'قمه التفاعل 🌺' elseif msgs < 100000 then var = 'اقوى تفاعل 🔥' end return var end
 function string:starts(text)
 return text == string.sub(self,1,string.len(text))
 end
@@ -194,7 +194,7 @@ local _nl, ctrl_chars = string.gsub(user, '%c', '')
 local _nl, real_digits = string.gsub(user, '%d', '')
 if user then
 if string.len(user) > 200 or ctrl_chars > 200 or real_digits > 200 then
-return "📛لن اعرض الاسم لانه سبام 📛" else return user  end
+return "؛لن اعرض الاسم لانه سبام 📛" else return user  end
 else return "---"  end
 end
 function check_markdown(text) -- لاخراج الرموز الماركدوان من النص 
@@ -880,7 +880,7 @@ redis:srem(boss..'admins:'..arg.chat_id,data.id_)
 return sendMsg(arg.chat_id,arg.msg_id,'👤*¦* العضو » '..user_name..' \n🎫*¦* الايدي » (`'..data.id_..'`)\n🛠*¦* تم تنزيله من الادمنيه \n✓️', "md")
 end
 if cmd == "iduser" then
-return sendMsg(arg.chat_id,arg.msg_id,"🧟‍♂*¦* آضـغط على آلآيدي ليتم آلنسـخ\n\n ["..arg.username.."] ~⪼ ( `"..data.id_.."` )", "md")
+return sendMsg(arg.chat_id,arg.msg_id,"⚜️*|* آضـغط على آلآيدي ليتم آلنسـخ\n\n ["..arg.username.."] ~⪼ ( `"..data.id_.."` )", "md")
 end
 if cmd == "whois" then
 return sendMsg(arg.chat_id,arg.msg_id,'👤*¦* الاسم » ['..data.title_..']\n🎫*¦* الايدي » (`'..data.id_..'`) \n🛠*¦* المعرف » '..check_markdown(arg.username)..'\n📃','md')
