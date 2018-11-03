@@ -499,11 +499,11 @@ return sendPhoto(msg.to.id,msg.id_,0,1,nil,redis:get(boss..':WELCOME_BOT'),[[�
 📛¦ مـن آلسـبآم وآلتوجيهہ‏‏ وآلتگرآر وآلخ...
 ⚖️¦ مـعرف آلمـطـور  » ]]..SUDO_USER:gsub([[\_]],'_')..[[ 🌿
 👨🏽‍🔧]],dl_cb,nil) end
-if matches[1] == "ضع كليشه المطور" then 
-redis:setex(boss..'text_sudo:witting'..msg.from.id,1200,true) return'📭¦ حسننا عزيزي 🍁\n💬¦ الان قم بارسال الكليشه \n🛠' end
-if matches[1] == "ضع شرط التفعيل" and matches[2] and string.match(matches[2], '^%d+$') then 
-redis:set(boss..':addnumberusers',matches[2]) return'💱*¦* تم وضـع شـرط آلتفعيل آلبوت آذآ گآنت آلمـجمـوعهہ‏‏ آگثر مـن*【'..matches[2]..'】* عضـو  🍁\n' end
-if matches[1] == "شرط التفعيل" then return'🚸*¦* شـرط آلتفعيل آلبوت آذآ گآنت آلمـجمـوعهہ‏‏ آگثر مـن*【'..redis:get(boss..':addnumberusers')..'】* عضـو  🍁\n' end end
+if matches[1] == "وضع امر المطور" then 
+redis:setex(boss..'text_sudo:witting'..msg.from.id,1200,true) return'☑️¦ حسننا عزيزي \n⚜️¦ الان قم بارسال الكليشه \n✓' end
+if matches[1] == "وضع عدد التفعيل" and matches[2] and string.match(matches[2], '^%d+$') then 
+redis:set(boss..':addnumberusers',matches[2]) return'☑️*¦* تم وضـع شـرط آلتفعيل آلبوت آذآ كانت المجموعه آگثر مـن*【'..matches[2]..'】* عضـو  🍁\n' end
+if matches[1] == "عدد التفعيل" then return'🚸*¦* شـرط آلتفعيل آلبوت آذآ گآنت آلمـجمـوعهہ‏‏ آگثر مـن*【'..redis:get(boss..':addnumberusers')..'】* عضـو  🍁\n' end end
 if is_sudo(msg) then
 if (matches[1] == 'المجموعات' or matches[1] == "المجموعات 🔝") and is_sudo(msg) then return chat_num(msg) end
 if matches[1] == 'قائمه المجموعات' and is_sudo(msg) then return chat_list(msg) end
@@ -567,7 +567,7 @@ local pv = redis:smembers(boss..'users')
 local groups = redis:smembers(boss..'group:ids')
 for i = 1, #pv do sendMsg(pv[i],0,check_markdown(msg.text))end
 for i = 1, #groups do sendMsg(groups[i],0,check_markdown(msg.text))end
-return sendMsg(msg.to.id,msg.id_,'📜*¦* تم اذاعه الكليشه بنجاح 🏌🏻\n🗣*¦* للمـجمـوعآت » *'..#groups..'* گروب \n👥*¦* للمـشـترگين » '..#pv..' مـشـترگ \n✓')end
+return sendMsg(msg.to.id,msg.id_,'📜*¦* تم اذاعه الكليشه بنجاح 🏌🏻\n♠️*¦* للمـجمـوعآت » *'..#groups..'* گروب \n♣️*¦* للمـشـترگين » '..#pv..' مـشـترگ \n——')end
 if redis:get(boss..'fwd:pv'..msg.from.id) then ---- استقبال رساله الاذاعه خاص
 redis:del(boss..'fwd:pv'..msg.from.id)
 local pv = redis:smembers(boss..'users')
