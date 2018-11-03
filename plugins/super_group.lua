@@ -15,9 +15,9 @@ if redis:get(boss..'lock_id'..msg.to.id) then
 tdcli_function({ID = "GetUserProfilePhotos",user_id_=msg.from.id,offset_=0,limit_=1},function(arg, data)
 if data.photos_[0] then
 sendPhoto(msg.to.id,msg.id_,0,1,nil,data.photos_[0].sizes_[1].photo_.persistent_id_,'✳️¦ معرفك  ~> '..userxn..'\n©¦ ايديك   ~>'..msg.from.id..'\n⚖️¦ رتبتـك  ~> '..get_rank(msg)..'\n🔖¦ رسائلك  ~> '..msgs..' رسالةة\n📪¦ تفاعلك  ~> '..get_ttl(msgs)..'\n✓',dl_cb,nil) else
-sendMsg(msg.to.id,msg.id_,'‼️*¦* مـاكو صوره 😪 ...!\n\n📮*¦* اسمك  ~> ['..check_name(namecut(msg.from.first_name))..']\n✳️*¦* معرفك » ['..userxn..']\n©*¦* ايديك  ~> (*'..msg.from.id..'*)\n⚖️*¦* رتبتك  ~> '..get_rank(msg)..'\n📪*¦* تفاعلك  ~> '..get_ttl(msgs)..'\n🔖¦* رسائلك  ~> (*'..msgs..'*) رساله\n✓','md')
+sendMsg(msg.to.id,msg.id_,'‼️*¦* مـاكو صوره 😪 ...!\n\n📮*¦* اسمك  ~> ['..check_name(namecut(msg.from.first_name))..']\n✳️*¦* معرفك » ['..userxn..']\n©*¦* ايديك  ~> (*'..msg.from.id..'*)\n⚖️*¦* موقعك  ~> '..get_rank(msg)..'\n📪*¦* تفاعلك  ~> '..get_ttl(msgs)..'\n📩╏  رسائلك  ~> (*'..msgs..'*) رساله\nـ.——————————','md')
 end end,nil) else
-return '📮*¦* اسمك  ~> ['..check_name(namecut(msg.from.first_name))..']\n✳️*¦* معرفك  ~> ['..userxn..']\n©*¦* ايديك  ~> (*'..msg.from.id..'*)\n⚖️ رتبتـك  ~> '..get_rank(msg)..'\n🔖¦ رسائلك ~> '..msgs..' رسالةة\n📪¦ تفاعلك  ~> '..get_ttl(msgs)..'\n✓'
+return '📮*¦* اسمك  ~> ['..check_name(namecut(msg.from.first_name))..']\n✳️*¦* معرفك  ~> ['..userxn..']\n©*¦* ايديك  ~> (*'..msg.from.id..'*)\n⚖️ موقعك  ~> '..get_rank(msg)..'\n📩╏ رسائلك ~> '..msgs..' رسالةة\n📪¦ تفاعلك  ~> '..get_ttl(msgs)..'\nـ.——————————'
 end end
 if msg.reply_id and not matches[2] then
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.to.id,message_id_ = msg.reply_id}, action_by_reply, {msg_id=msg.id_,chat_id=msg.to.id,cmd="iduser"})
