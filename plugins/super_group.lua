@@ -406,7 +406,7 @@ end
 if matches[1] == 'معلوماتي' or matches[1] == 'موقعي' then
 if msg.from.username then username = '@'..msg.from.username else username = 'لا يوجد ❕' end
 local msgs = tonumber(redis:get(boss..'msgs:'..msg.from.id..':'..msg.to.id) or 0)
-sendMsg(msg.to.id, msg.id_,'*👨🏽‍🔧¦ اهـلا بـك عزيزي » \n\n📜¦ الاسم » * ['..check_name(namecut(msg.from.first_name))..']\n*🎟¦ المعرف:* ['..username..']\n*🏷¦ الايدي » * 【 `'..msg.from.id..'` 】\n📨*¦* رسائلك » 【*'..msgs..'*】رسـآلهہ‏‏ \n🧟‍♂*¦*  عدد جهہآتگ » 【'..(tonumber(redis:get(boss..':addusers_group:'..msg.to.id..':'..msg.from.id)) or 0)..'】جهہ‏‏\n⭐️*¦* تفاعلك » '..get_ttl(msgs)..'\n*🎗¦ رتبتك » * '..get_rank(msg)..'\n*🎫¦ ايدي المجموعه » * ( `'..msg.to.id..'` ) \n\n*🏌🏻¦ مـطـور البوت * » '..SUDO_USER..'\n👨🏽‍🔧','md') end
+sendMsg(msg.to.id, msg.id_,'*🍃¦ اهـلا بـك عزيزي » \nـ.——————————\n⚡️¦ الاسم » * ['..check_name(namecut(msg.from.first_name))..']\n*🎟¦ المعرف:* ['..username..']\n*🆔¦ الايدي » * 【 `'..msg.from.id..'` 】\n📩*¦* رسائلك » 【*'..msgs..'*】رسـآلهہ‏‏ \n🔭*¦*  عدد جهہآتگ » 【'..(tonumber(redis:get(boss..':addusers_group:'..msg.to.id..':'..msg.from.id)) or 0)..'】جهہ‏‏\n📉*¦* تفاعلك » '..get_ttl(msgs)..'\n*⚜️¦ رتبتك » * '..get_rank(msg)..'\n*🎫¦ ايدي المجموعه » * ( `'..msg.to.id..'` ) \n\n*☑️¦ مـعرف آلمـطـور    * » '..SUDO_USER..'\nـ.——————————','md') end
 if matches[1] == "git" and not matches[2]:match("clone") then
 if not is_mod(msg) then return 'للاداريين فقط' end
 url = "https://api.github.com/users/"..URL.escape(matches[2])
@@ -494,11 +494,15 @@ redis:setex(boss..'welcom_ph:witting'..msg.from.id,300,true) return'📭¦ حس�
 if matches[1] == "تعطيل" and matches[2] == "البوت خدمي" then return lock_service(msg) end
 if matches[1] == "تفعيل" and matches[2] == "البوت خدمي" then return unlock_service(msg) end
 if matches[1] == "صوره الترحيب" then
-return sendPhoto(msg.to.id,msg.id_,0,1,nil,redis:get(boss..':WELCOME_BOT'),[[💯¦ مـرحبآ آنآ بوت آسـمـي ]]..redis:get(boss..'bot:name')..[[ 🎖
-💰¦ آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
-📛¦ مـن آلسـبآم وآلتوجيهہ‏‏ وآلتگرآر وآلخ...
-⚖️¦ مـعرف آلمـطـور  » ]]..SUDO_USER:gsub([[\_]],'_')..[[ 🌿
-👨🏽‍🔧]],dl_cb,nil) end
+return sendPhoto(msg.to.id,msg.id_,0,1,nil,redis:get(boss..':WELCOME_BOT'),[[👋🏻¦ مـرحبآ آنآ بوت آسـمـي ]]..redis:get(boss..'bot:name')..[[ 🎖
+💰🚸¦ اختصاصي حماية كروبات المتفاعله
+⚙️¦ لتفعيل البوت اتبع مايلي
+📮¦  اضف البوت الى المجموعه
+👮🏻¦ ارفع البوت ادمن في المجموعه
+👨🏻‍✈️¦ فقط آلمـطـور يسـتطـيع تفعيل آلبوت
+⚖️¦ مـعرف آلمـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[ 
+📢¦[ قـناة سـورس فيـكاا ©](T.ME/VIKAIQ)
+ـ.——————————]],dl_cb,nil) end
 if matches[1] == "وضع امر المطور" then 
 redis:setex(boss..'text_sudo:witting'..msg.from.id,1200,true) return'☑️¦ حسننا عزيزي \n⚜️¦ الان قم بارسال الكليشه \n✓' end
 if matches[1] == "وضع عدد التفعيل" and matches[2] and string.match(matches[2], '^%d+$') then 
