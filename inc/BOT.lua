@@ -1,6 +1,6 @@
 --[[
 << تم برمجه وكتابه السورس من قبل مطور النقيب اركان  >>
-<<         @T7TT3  \  @T3OIQ          >>
+<<         @T7TT3  \  @alshmry653          >>
 ]] 
 function load_proc()
 loadfile('./inc/functions.lua')()
