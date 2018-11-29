@@ -38,13 +38,13 @@ print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤ لم تقوم بادخال 
 create_config()
 end end
 if not redis:get(ip_login..":SUDO_USER") then
-io.write('\n\27[1;33m￤ادخل معرف المطور الاساسي  ↓  \n￤Enter your USERNAME SUDO : \27[0;39;49m')
+io.write('\n\27[1;33m￤دخل معرفم لتصبح مطور  ↓  \n￤Enter your USERNAME SUDO : \27[0;39;49m')
 SUDO_USER = io.read()
 if SUDO_USER ~= '' then
 if string.match(SUDO_USER, '@[%a%d_]') then
 local url , res = https.request('https://th3boss.ga/GetID/?User='..SUDO_USER)
 if res ~= 200 then
-print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطأ في الاتصال حاو مجددا !')
+print('\n\27[1;31m￤ Conect is Failed !\n￤خطا حاول مجددا !')
 create_config()
 else
 local jjson = JSON.decode(url)
